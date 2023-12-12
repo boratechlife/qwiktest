@@ -1,11 +1,9 @@
-import { type Signal, component$, useSignal } from "@builder.io/qwik";
+import { component$, useSignal } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import { createContextId } from "@builder.io/qwik";
 
-export const DataContext =
-  createContextId<Signal<boolean>>("docs.theme-context");
+export const DataContext = createContextId("docs.theme-context");
 
-import type { DocumentHead } from "@builder.io/qwik-city";
 import FilterModalMobile from "~/components/FilterModalMobile";
 import Filters from "~/components/Filters";
 
@@ -23,9 +21,7 @@ export default component$(() => {
   const isOpen = useSignal(false);
   // useContextProvider(DataContext, isOpen);
 
-  function formatImageUrl(item: {
-    image: { imageName: any; number: any; sizes: any[]; formats: any[] };
-  }) {
+  function formatImageUrl(item) {
     return `https://s.fysia.se/${item.image.imageName}-${item.image.number}-${item.image.sizes[2]}.${item.image.formats[0]}`;
   }
   const prods = useProductsApi();
@@ -130,7 +126,7 @@ box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.10);"
                 </div>
 
                 <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-10 mb-[50px]">
-                  {prods.value.products.map((item: any) => {
+                  {prods.value.products.map((item) => {
                     return (
                       <div
                         class="w-full lg:w-[250px] group"
@@ -386,7 +382,7 @@ box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.10);"
   );
 });
 
-export const head: DocumentHead = {
+export const head = {
   title: "Welcome to Qwik",
   meta: [
     {
