@@ -2,14 +2,14 @@
 
 import { qwikify$ } from "@builder.io/qwik-react";
 import { Button, Slider } from "@mui/material";
-import type { GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
+
 import { DataGrid } from "@mui/x-data-grid";
 
 export const MUIButton = qwikify$(Button);
 export const MUISlider = qwikify$(Slider, { eagerness: "hover" });
 
 export const TableApp = qwikify$(() => {
-  const columns: GridColDef[] = [
+  const columns = [
     { field: "id", headerName: "ID", width: 70 },
     { field: "firstName", headerName: "First name", width: 130 },
     { field: "lastName", headerName: "Last name", width: 130 },
@@ -25,7 +25,7 @@ export const TableApp = qwikify$(() => {
       description: "This column has a value getter and is not sortable.",
       sortable: false,
       width: 160,
-      valueGetter: (params: GridValueGetterParams) =>
+      valueGetter: (params) =>
         `${params.row.firstName || ""} ${params.row.lastName || ""}`,
     },
   ];
