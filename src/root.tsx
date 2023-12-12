@@ -7,6 +7,8 @@ import {
 import { RouterHead } from "./components/router-head/router-head";
 
 import "./global.css";
+// Import Swiper styles
+import "swiper/css";
 
 export default component$(() => {
   /**
@@ -21,6 +23,51 @@ export default component$(() => {
       <head>
         <meta charSet="utf-8" />
         <link rel="manifest" href="/manifest.json" />
+
+        <script
+          src="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
+"
+        ></script>
+        <link
+          href="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
+"
+          rel="stylesheet"
+        />
+
+        <script
+          defer
+          dangerouslySetInnerHTML=" document.addEventListener( 'DOMContentLoaded', function () {
+          
+           
+           
+            var main = new Splide( '#main-carousel', {
+              type      : 'fade',
+              pagination: false,
+              arrows    : true,
+            } );
+          
+            var thumbnails = new Splide( '#thumbnail-carousel', {
+              fixedWidth  : 60,
+              fixedHeight : 60,
+              gap         : 10,
+              rewind      : true,
+              pagination  : false,
+              isNavigation: false,
+              breakpoints : {
+                600: {
+                  fixedWidth : 50,
+                  fixedHeight: 50,
+                },
+              },
+            } );
+          
+            main.sync( thumbnails );
+            main.mount();
+            thumbnails.mount();
+          } );"
+        ></script>
         <RouterHead />
         <ServiceWorkerRegister />
       </head>
