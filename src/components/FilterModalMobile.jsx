@@ -1,6 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import Filters from "~/components/Filters";
 
+
 export default component$(({ onClick$ }) => {
   return (
     <div
