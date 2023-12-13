@@ -228,7 +228,7 @@ export default component$(() => {
           max={1000}
           valueLabelDisplay="auto"
           onChange$={(_, value) => {
-            count.value = value as number;
+            count.value = value as number[];
           }}
         />
 

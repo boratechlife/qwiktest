@@ -1,7 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import LogoDark from "~/media/Logo - dark.svg?jsx";
 import HeaderTopBottom from "./HeaderTopBottom";
-import MobileMenu from "./MobileMenu";
 
 export default component$(() => {
   return (
@@ -148,31 +147,70 @@ export default component$(() => {
                   {" "}
                   Wearable Tech{" "}
                 </div>
-                <div class="nav-item opacity-70 hover:opacity-100 cursor-pointer">
+                <div class="nav-item opacity-70 hover:opacity-100 cursor-pointer inline-flex items-center">
                   {" "}
                   Sale
+                  <span class="relative">
+                    <div class="absolute ml-1 flex items-center inset-0 justify-center text-[#FFF] text-center font-Roboto text-[12px] font-bold leading-[116.667%]">
+                      40% OFF
+                    </div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="63"
+                      height="20"
+                      viewBox="0 0 63 20"
+                      fill="none"
+                    >
+                      <path
+                        d="M6.10427 1.27961C6.66566 0.477635 7.58303 0 8.56197 0H60C61.6569 0 63 1.34315 63 3V17C63 18.6569 61.6569 20 60 20H8.56196C7.58302 20 6.66566 19.5224 6.10427 18.7204L1.20427 11.7204C0.4812 10.6874 0.481199 9.31257 1.20427 8.27961L6.10427 1.27961Z"
+                        fill="#CA232C"
+                      />
+                    </svg>
+                  </span>
                 </div>
-                <div class="nav-item opacity-70 hover:opacity-100 cursor-pointer">
+                <div class="nav-item opacity-70 hover:opacity-100 cursor-pointer relative inline-flex">
                   {" "}
                   All products
+                  <span class="relative">
+                    <div class="absolute ml-1 text-white text-center font-Roboto text-[12px] font-bold leading-4/3 flex items-center justify-center inset-0 ">
+                      72
+                    </div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="31"
+                      height="20"
+                      viewBox="0 0 31 20"
+                      fill="none"
+                    >
+                      <path
+                        d="M6.10427 1.27961C6.66566 0.477635 7.58303 0 8.56197 0H28C29.6569 0 31 1.34315 31 3V17C31 18.6569 29.6569 20 28 20H8.56197C7.58302 20 6.66566 19.5224 6.10427 18.7204L1.20427 11.7204C0.4812 10.6874 0.481199 9.31257 1.20427 8.27961L6.10427 1.27961Z"
+                        fill="#737B86"
+                      />
+                    </svg>
+                  </span>
                 </div>
               </div>
             </div>
 
             <div class=" rounded-md w-[181px] h-[86px] bg-[#37424F] flex justify-center items-center">
               <div class="flex items-center gap-2 ">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="42"
-                  height="37"
-                  viewBox="0 0 42 37"
-                  fill="none"
-                >
-                  <path
-                    d="M38.5088 21.775L41.9557 6.74376C42.2046 5.65847 41.3723 4.625 40.2493 4.625H11.6089L10.9406 1.38678C10.774 0.579643 10.0574 0 9.22608 0H1.75C0.78349 0 0 0.776494 0 1.73438V2.89062C0 3.84851 0.78349 4.625 1.75 4.625H6.84564L11.9679 29.4435C10.7425 30.142 9.91667 31.4516 9.91667 32.9531C9.91667 35.1882 11.7448 37 14 37C16.2552 37 18.0833 35.1882 18.0833 32.9531C18.0833 31.8204 17.6132 30.7971 16.8566 30.0625H32.1434C31.3868 30.7971 30.9167 31.8204 30.9167 32.9531C30.9167 35.1882 32.7448 37 35 37C37.2552 37 39.0833 35.1882 39.0833 32.9531C39.0833 31.3509 38.1436 29.9662 36.7807 29.3106L37.183 27.5563C37.4319 26.471 36.5995 25.4375 35.4765 25.4375H15.9044L15.4271 23.125H36.8023C37.6194 23.125 38.3277 22.5647 38.5088 21.775Z"
-                    fill="white"
-                  />
-                </svg>
+                <span class="relative ">
+                  <div class="absolute -top-1 -right-1 text-white text-center font-Roboto  h-[20px] w-[20px] flex items-center justify-center text-[11px]  rounded-full border-2 border-solid border-[#37424F] bg-[#28A744] font-bold pt-1">
+                    3
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="42"
+                    height="37"
+                    viewBox="0 0 42 37"
+                    fill="none"
+                  >
+                    <path
+                      d="M38.5088 21.775L41.9557 6.74376C42.2046 5.65847 41.3723 4.625 40.2493 4.625H11.6089L10.9406 1.38678C10.774 0.579643 10.0574 0 9.22608 0H1.75C0.78349 0 0 0.776494 0 1.73438V2.89062C0 3.84851 0.78349 4.625 1.75 4.625H6.84564L11.9679 29.4435C10.7425 30.142 9.91667 31.4516 9.91667 32.9531C9.91667 35.1882 11.7448 37 14 37C16.2552 37 18.0833 35.1882 18.0833 32.9531C18.0833 31.8204 17.6132 30.7971 16.8566 30.0625H32.1434C31.3868 30.7971 30.9167 31.8204 30.9167 32.9531C30.9167 35.1882 32.7448 37 35 37C37.2552 37 39.0833 35.1882 39.0833 32.9531C39.0833 31.3509 38.1436 29.9662 36.7807 29.3106L37.183 27.5563C37.4319 26.471 36.5995 25.4375 35.4765 25.4375H15.9044L15.4271 23.125H36.8023C37.6194 23.125 38.3277 22.5647 38.5088 21.775Z"
+                      fill="white"
+                    />
+                  </svg>
+                </span>
 
                 <div class="flex flex-col gap-0.5">
                   <span class="text-white opacity-50 text-sm text-center">
