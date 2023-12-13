@@ -44,22 +44,21 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
            
             var main = new Splide( '#main-carousel', {
               type      : 'fade',
-              rewind    : true,
               pagination: false,
-              arrows    : false,
+              arrows    : true,
             } );
           
             var thumbnails = new Splide( '#thumbnail-carousel', {
-              fixedWidth  : 100,
+              fixedWidth  : 60,
               fixedHeight : 60,
               gap         : 10,
               rewind      : true,
               pagination  : false,
-              isNavigation: true,
+              isNavigation: false,
               breakpoints : {
                 600: {
-                  fixedWidth : 60,
-                  fixedHeight: 44,
+                  fixedWidth : 50,
+                  fixedHeight: 50,
                 },
               },
             } );

@@ -1,9 +1,13 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useSignal } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
-import type { DocumentHead } from "@builder.io/qwik-city";
+import { createContextId } from "@builder.io/qwik";
+
+export const DataContext = createContextId("docs.theme-context");
+
+import FilterModalMobile from "~/components/FilterModalMobile";
 import Filters from "~/components/Filters";
 
-export const useDadJoke = routeLoader$(async () => {
+export const useProductsApi = routeLoader$(async () => {
   const response = await fetch(
     "https://api.fysia.se/procarenordicapi/slugData?canonicalRoot=fysia.se&slug=45m",
     {
@@ -14,15 +18,19 @@ export const useDadJoke = routeLoader$(async () => {
 });
 
 export default component$(() => {
-  function formatImageUrl(item: {
-    image: { imageName: any; number: any; sizes: any[]; formats: any[] };
-  }) {
+  const isOpen = useSignal(false);
+  // useContextProvider(DataContext, isOpen);
+
+  function formatImageUrl(item) {
     return `https://s.fysia.se/${item.image.imageName}-${item.image.number}-${item.image.sizes[2]}.${item.image.formats[0]}`;
   }
-  const dadJokeSignal = useDadJoke();
-  console.log("Dad Joke", dadJokeSignal.value.products);
+  const prods = useProductsApi();
+
   return (
     <main class="section mt-[54px] text-xl">
+      {isOpen.value && (
+        <FilterModalMobile onClick$={() => (isOpen.value = false)} />
+      )}
       <section class="">
         <div class="container mx-auto">
           <div class="w-full flex flex-wrap lg:flex-nowrap gap-[60px] mb-[89px]">
@@ -30,7 +38,7 @@ export default component$(() => {
               <Filters />
             </div>
 
-            <div class="w-full lg:w-3/4 px-4 ">
+            <div class="w-full lg:w-3/4 px-0 ">
               <h4 class="text-[#232F3E] text-[32px] font-bold mb-[10px]">
                 Name of the category
               </h4>
@@ -61,6 +69,7 @@ export default component$(() => {
 
                     <div
                       class="select flex lg:hidden px-[12px] justify-center gap-4 w-[134px] h-[42px] items-center rounded-[5px] relative border border-[#ddd]"
+                      onClick$={() => (isOpen.value = true)}
                       style="background: linear-gradient(180deg, #FFF 0%, #FAFAFA 100%);
 box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.10);"
                     >
@@ -117,7 +126,7 @@ box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.10);"
                 </div>
 
                 <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-10 mb-[50px]">
-                  {dadJokeSignal.value.products.map((item: any) => {
+                  {prods.value.products.map((item) => {
                     return (
                       <div
                         class="w-full lg:w-[250px] group"
@@ -140,12 +149,20 @@ box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.10);"
                             height={300}
                           />
 
-                          <div class="absolute group-hover:lg:hidden bottom-1 flex left-1 items-center gap-2">
+                          <div class="absolute group-hover:lg:hidden bottom-1 flex left-1 items-center gap-0.5">
                             <div class="bg-[#1D6EC1] w-[37px] rounded h-[22px] text-white flex items-center justify-center text-[12px]">
-                              {item.discountPctMax}
+                              -40%
                             </div>
 
-                            <div class="flex gap-2 items-center"></div>
+                            <div class="flex gap-1 items-center">
+                              <div class="w-[12px] h-[12px] flex-shrink-0 bg-black rounded-full"></div>
+                              <div class="w-[12px] h-[12px] flex-shrink-0 bg-[#004EE5] rounded-full"></div>
+                              <div class="w-[12px] h-[12px] flex-shrink-0 bg-[#3DBD00] rounded-full"></div>
+
+                              <span class="text-[#5F6061] font-Roboto text-[12px] leading-[253.846%]">
+                                +3 more
+                              </span>
+                            </div>
                           </div>
                         </div>
                         <div class="group-hover:lg:hidden">
@@ -365,7 +382,7 @@ box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.10);"
   );
 });
 
-export const head: DocumentHead = {
+export const head = {
   title: "Welcome to Qwik",
   meta: [
     {

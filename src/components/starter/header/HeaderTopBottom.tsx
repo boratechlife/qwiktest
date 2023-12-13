@@ -1,4 +1,5 @@
 import { component$ } from "@builder.io/qwik";
+import Bitmap from "~/media/Bitmap.png?jsx";
 
 export default component$(() => {
   return (
@@ -87,7 +88,9 @@ export default component$(() => {
               </span>
             </div>
             <div class="w-full lg:w-1/3 hidden lg:flex items-center gap-1">
-              <img src="/Bitmap.png" alt="" width="21" height={"21"} />
+              <div class="h-[21px] w-[21px]">
+                <Bitmap />
+              </div>
               <span class="text-sm text-[#232F3E]">
                 <b>14-day money-back guarantee</b> on all products
               </span>
