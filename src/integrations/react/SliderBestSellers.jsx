@@ -21,7 +21,7 @@ function SliderBestSeller({ bestSellerProducts }) {
         className="splide"
         aria-label="The carousel with thumbnails. Selecting a thumbnail will change the Beautiful Gallery carousel."
       >
-        <div className="splide__arrows">
+        <div className="splide__arrows best-seller">
           <button className="splide__arrow splide__arrow--prev  transform -translate-x-[6.5rem] w-[60.968px] h-[90px] rounded  bg-[#1D6EC1] text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +35,7 @@ function SliderBestSeller({ bestSellerProducts }) {
               />
             </svg>
           </button>
-          <button className="splide__arrow splide__arrow--next transform translate-x-10 w-[60.968px] h-[90px] rounded  bg-[#1D6EC1] text-white">
+          <button className="splide__arrow splide__arrow--next transform translate-x-20 w-[60.968px] h-[90px] rounded  bg-[#1D6EC1] text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="32"

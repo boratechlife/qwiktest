@@ -1,7 +1,12 @@
 import { component$ } from "@builder.io/qwik";
 import Filters from "~/components/Filters";
 
-export default component$(({ onClick$ }) => {
+interface ItemProps {
+  openMobileMenu?: boolean;
+  onClick$: () => void;
+}
+
+export default component$<ItemProps>(({ onClick$ }) => {
   return (
     <div
       class="fixed inset-0 p-4 overflow-y-auto

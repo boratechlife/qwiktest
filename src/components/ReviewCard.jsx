@@ -2,7 +2,23 @@ import { component$ } from "@builder.io/qwik";
 
 export default component$(() => {
   return (
-    <div class="w-full   py-[27px] px-[24px] bg-[#FCF8E6] rounded-[10px]">
+    <div class="w-full   py-[27px] px-[24px] bg-[#FCF8E6] rounded-[10px] relative">
+      <div class="absolute -top-3 left-12">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="14"
+          viewBox="0 0 24 14"
+          fill="none"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M12 0L24 14H0L12 0Z"
+            fill="#FCF8E6"
+          />
+        </svg>
+      </div>
       <div class="flex w-full items-center gap-4">
         <div class="flex items-center w-[42px] h-[42px] flex-shrink-0 rounded-full bg-gray-100"></div>
 

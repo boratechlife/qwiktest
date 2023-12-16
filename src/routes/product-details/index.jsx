@@ -9,6 +9,8 @@ import ReviewCard from "~/components/ReviewCard";
 import MobileProductCard from "~/components/MobileProductCard";
 import ProductImageReviews from "~/components/ProductImageReviews";
 import { MobileCarouselSlide } from "~/integrations/react/MobileCarousel";
+import { ReminderCard } from "~/components/Reminder";
+import { ShopTrustInfo } from "~/components/ShopTrustInfo";
 
 export const useProducts = routeLoader$(async () => {
   const response = await fetch(
@@ -43,7 +45,7 @@ export default component$(() => {
         <div class="container mx-auto w-full max-sm:p-0">
           <div class="w-full flex flex-wrap lg:flex-nowrap  gap-[36px]">
             <div class="w-full lg:w-1/2 mx-4 lg:mx-auto">
-              <div class=" bg-gray-100 ">
+              <div class=" bg-white ">
                 <Carousel images={images} />
               </div>
               <div class="w-full hidden lg:block">
@@ -447,7 +449,7 @@ export default component$(() => {
 
                 {/* SIZE */}
                 <div class="mb-[15px] mx-4 lg:mx-auto ">
-                  <h5 class="w-full inline-flex justify-between lg:w-2/3">
+                  <h5 class="w-3/4 inline-flex justify-between  lg:w-2/3">
                     <span class="text-base font-bold text-[#5F6061] mb-[10px]">
                       Choose Size
                     </span>
@@ -455,7 +457,7 @@ export default component$(() => {
                       Size Chart
                     </a>
                   </h5>
-                  <ul class="inline-flex border divide-x ">
+                  <ul class="inline-flex border divide-x max-sm:w-3/4">
                     <li class="w-[76px] lg:w-[96px] h-[56px]  rounded-tl-[5px] rounded-bl-[5px] cursor-pointer border-[2px] bg-[#FFF5E3] border-[#F09831] flex items-center flex-col justify-center relative text-sm font-bold text-center text-[#232F3E]">
                       <div>S</div>
                     </li>
@@ -681,12 +683,13 @@ export default component$(() => {
                 </div>
 
                 {/* IN STOCK */}
-                <div class="flex items-center gap-2 mb-[15px] mx-4 lg:mx-auto">
-                  <span>
+                <div class="flex items-start gap-2 mb-[15px] mx-4 lg:mx-auto">
+                  <span class="align-baseline mt-1">
                     <svg
                       width="16"
                       height="12"
                       viewBox="0 0 16 12"
+                      class="h-[12px] w-[16px]"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -699,7 +702,7 @@ export default component$(() => {
                     </svg>
                   </span>
 
-                  <p class="text-[#5F6061] text-[12px] lg:text-sm">
+                  <p class="text-[#5F6061] text-[12px] lg:text-sm align-baseline">
                     <span class="text-[#3DBD00] text-[12px] lg:text-sm font-bold">
                       In stock.
                     </span>
@@ -871,240 +874,7 @@ export default component$(() => {
 
                 {/* DONT FORGET */}
 
-                <div class="w-full hidden lg:block rounded-[7px] mt-5  border-2 border-[#F09831] pb-1.5 bg-white divide-y relative">
-                  <div class="absolute -top-3.5 left-10 rounded-[3px] bg-[#F09831]  h-[25px] flex-shrink-0 uppercase inline-flex px-2.5 text-white font-bold items-center justify-center">
-                    DON’T FORGET
-                  </div>
-                  <div class="flex w-full h-[65px]  bg-[#F09831] rounded-[2px] bg-opacity-[.2] justify-between px-4 -y-2 items-center">
-                    <div class="flex items-center gap-4">
-                      <label
-                        class="custom-input flex items-center justify-center rounded-[4px] bg-[#F09831] h-[32px] w-[32px]"
-                        for="additional"
-                        tabIndex={1}
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="19"
-                          height="14"
-                          viewBox="0 0 19 14"
-                          fill="none"
-                        >
-                          <path
-                            d="M6.45324 13.725L0.278237 7.62349C-0.0927457 7.25692 -0.0927457 6.66257 0.278237 6.29596L1.62171 4.96843C1.99269 4.60182 2.59424 4.60182 2.96522 4.96843L7.125 9.07869L16.0348 0.274927C16.4058 -0.0916425 17.0073 -0.0916425 17.3783 0.274927L18.7218 1.60246C19.0927 1.96903 19.0927 2.56338 18.7218 2.92998L7.79675 13.7251C7.42573 14.0916 6.82423 14.0916 6.45324 13.725Z"
-                            fill="white"
-                          />
-                        </svg>
-                      </label>
-                      <div class="inline-flex gap-5 items-center">
-                        <span class="text-base font-semibold text-[#232F3E]">
-                          Additional Product
-                        </span>
-                        <span class=" p-1 text-xs bg-transparent text-white relative">
-                          <div class="h-[25px] w-[66px]"></div>
-                          <span class="z-50 absolute top-1/4 w-full ">
-                            {" "}
-                            40% OFF
-                          </span>
-
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="absolute top-0 -left-2 h-full"
-                            width="66"
-                            height="25"
-                            viewBox="0 0 66 25"
-                            fill="none"
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M11.7915 0.864591C12.3529 0.310608 13.1099 0 13.8987 0H63C64.6569 0 66 1.34315 66 3V22C66 23.6569 64.6569 25 63 25H13.8987C13.1099 25 12.3529 24.6894 11.7915 24.1354L1.44271 13.9236C0.649052 13.1405 0.649051 11.8595 1.44271 11.0764L11.7915 0.864591Z"
-                              fill="#CA232C"
-                            />
-                          </svg>
-                        </span>
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        class="w-[66px] h-[42px] bg-white shadow border border-[#DDD] rounded-[5px] flex items-center gap-4 px-2.5 py-2"
-                        style="background: linear-gradient(180deg, #FFF 0%, #FAFAFA 100%);
-                      box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.10);"
-                      >
-                        <span>1x</span>
-                        <span>
-                          <svg
-                            width="10"
-                            height="6"
-                            viewBox="0 0 10 6"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M5 6L10 0H0L5 6Z"
-                              fill="black"
-                            />
-                          </svg>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="flex w-full h-[65px]   bg-white justify-between px-4 -y-2 items-center">
-                    <div class="flex items-center gap-4">
-                      <label
-                        class="custom-input border border-[#CCC] flex items-center justify-center rounded-[4px] bg-white h-[32px] w-[32px]"
-                        for="additional"
-                        style="box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25) inset;"
-                        tabIndex={1}
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="19"
-                          height="14"
-                          viewBox="0 0 19 14"
-                          fill="none"
-                        >
-                          <path
-                            d="M6.45324 13.725L0.278237 7.62349C-0.0927457 7.25692 -0.0927457 6.66257 0.278237 6.29596L1.62171 4.96843C1.99269 4.60182 2.59424 4.60182 2.96522 4.96843L7.125 9.07869L16.0348 0.274927C16.4058 -0.0916425 17.0073 -0.0916425 17.3783 0.274927L18.7218 1.60246C19.0927 1.96903 19.0927 2.56338 18.7218 2.92998L7.79675 13.7251C7.42573 14.0916 6.82423 14.0916 6.45324 13.725Z"
-                            fill="#F0F2F5"
-                          />
-                        </svg>
-                      </label>
-
-                      <div class="inline-flex gap-5 items-center">
-                        <span class="text-base font-semibold text-[#232F3E]">
-                          Additional Product
-                        </span>
-                        <span class=" p-1 text-xs bg-transparent text-white relative">
-                          <div class="h-[25px] w-[66px]"></div>
-                          <span class="z-50 absolute top-1/4 w-full ">
-                            {" "}
-                            40% OFF
-                          </span>
-
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="absolute top-0 -left-2 h-full"
-                            width="66"
-                            height="25"
-                            viewBox="0 0 66 25"
-                            fill="none"
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M11.7915 0.864591C12.3529 0.310608 13.1099 0 13.8987 0H63C64.6569 0 66 1.34315 66 3V22C66 23.6569 64.6569 25 63 25H13.8987C13.1099 25 12.3529 24.6894 11.7915 24.1354L1.44271 13.9236C0.649052 13.1405 0.649051 11.8595 1.44271 11.0764L11.7915 0.864591Z"
-                              fill="#CA232C"
-                            />
-                          </svg>
-                        </span>
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        class="w-[66px] h-[42px] bg-white shadow border border-[#DDD] rounded-[5px] flex items-center gap-4 px-2.5 py-2"
-                        style="background: linear-gradient(180deg, #FFF 0%, #FAFAFA 100%);
-                      box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.10);"
-                      >
-                        <span>1x</span>
-                        <span>
-                          <svg
-                            width="10"
-                            height="6"
-                            viewBox="0 0 10 6"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M5 6L10 0H0L5 6Z"
-                              fill="black"
-                            />
-                          </svg>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="flex w-full h-[65px]   bg-white justify-between px-4 -y-2 items-center">
-                    <div class="flex items-center gap-4">
-                      <label
-                        class="custom-input border border-[#CCC] flex items-center justify-center rounded-[4px] bg-white h-[32px] w-[32px]"
-                        for="additional"
-                        style="box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25) inset;"
-                        tabIndex={1}
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="19"
-                          height="14"
-                          viewBox="0 0 19 14"
-                          fill="none"
-                        >
-                          <path
-                            d="M6.45324 13.725L0.278237 7.62349C-0.0927457 7.25692 -0.0927457 6.66257 0.278237 6.29596L1.62171 4.96843C1.99269 4.60182 2.59424 4.60182 2.96522 4.96843L7.125 9.07869L16.0348 0.274927C16.4058 -0.0916425 17.0073 -0.0916425 17.3783 0.274927L18.7218 1.60246C19.0927 1.96903 19.0927 2.56338 18.7218 2.92998L7.79675 13.7251C7.42573 14.0916 6.82423 14.0916 6.45324 13.725Z"
-                            fill="#F0F2F5"
-                          />
-                        </svg>
-                      </label>
-
-                      <div class="inline-flex gap-5 items-center">
-                        <span class="text-base font-semibold text-[#232F3E]">
-                          Additional Product
-                        </span>
-                        <span class=" p-1 text-xs bg-transparent text-white relative">
-                          <div class="h-[25px] w-[66px]"></div>
-                          <span class="z-50 absolute top-1/4 w-full ">
-                            {" "}
-                            40% OFF
-                          </span>
-
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="absolute top-0 -left-2 h-full"
-                            width="66"
-                            height="25"
-                            viewBox="0 0 66 25"
-                            fill="none"
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M11.7915 0.864591C12.3529 0.310608 13.1099 0 13.8987 0H63C64.6569 0 66 1.34315 66 3V22C66 23.6569 64.6569 25 63 25H13.8987C13.1099 25 12.3529 24.6894 11.7915 24.1354L1.44271 13.9236C0.649052 13.1405 0.649051 11.8595 1.44271 11.0764L11.7915 0.864591Z"
-                              fill="#CA232C"
-                            />
-                          </svg>
-                        </span>
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        class="w-[66px] h-[42px] bg-white shadow border border-[#DDD] rounded-[5px] flex items-center gap-4 px-2.5 py-2"
-                        style="background: linear-gradient(180deg, #FFF 0%, #FAFAFA 100%);
-                      box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.10);"
-                      >
-                        <span>1x</span>
-                        <span>
-                          <svg
-                            width="10"
-                            height="6"
-                            viewBox="0 0 10 6"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M5 6L10 0H0L5 6Z"
-                              fill="black"
-                            />
-                          </svg>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <ReminderCard />
                 {/* LIST */}
                 <div class="flex mx-4 lg:mx-auto flex-col gap-2 mt-3">
                   <div class="flex items-center gap-4">
@@ -1439,22 +1209,7 @@ export default component$(() => {
 
                 {/* TRUST */}
 
-                <div class="flex mx-4 lg:mx-auto gap-2 items-center py-[10px] mb-[46px]">
-                  <div class=" w-[92px] h-[22px] -mt-2">
-                    <TrustPilot class="object-fit align-middle" />
-                  </div>
-
-                  <div class="text-[#181818] text-[12px] lg:text-sm font-bold">
-                    Your Shop
-                  </div>
-                  <div class=" w-[100px]  ">
-                    <Image class="object-fit align-middle" />
-                  </div>
-
-                  <p class="text-[#181818] text-[12px] lg:text-sm font-bold">
-                    4.9 out of 5
-                  </p>
-                </div>
+                <ShopTrustInfo />
               </section>
 
               <MobileProductCard
@@ -2099,240 +1854,7 @@ export default component$(() => {
 
                 {/* DONT FORGET */}
 
-                <div class="w-full hidden lg:block rounded-[7px] mt-5  border-2 border-[#F09831] pb-1.5 bg-white divide-y relative">
-                  <div class="absolute -top-3.5 left-10 rounded-[3px] bg-[#F09831]  h-[25px] flex-shrink-0 uppercase inline-flex px-2.5 text-white font-bold items-center justify-center">
-                    DON’T FORGET
-                  </div>
-                  <div class="flex w-full h-[65px]  bg-[#F09831] rounded-[2px] bg-opacity-[.2] justify-between px-4 -y-2 items-center">
-                    <div class="flex items-center gap-4">
-                      <label
-                        class="custom-input flex items-center justify-center rounded-[4px] bg-[#F09831] h-[32px] w-[32px]"
-                        for="additional"
-                        tabIndex={1}
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="19"
-                          height="14"
-                          viewBox="0 0 19 14"
-                          fill="none"
-                        >
-                          <path
-                            d="M6.45324 13.725L0.278237 7.62349C-0.0927457 7.25692 -0.0927457 6.66257 0.278237 6.29596L1.62171 4.96843C1.99269 4.60182 2.59424 4.60182 2.96522 4.96843L7.125 9.07869L16.0348 0.274927C16.4058 -0.0916425 17.0073 -0.0916425 17.3783 0.274927L18.7218 1.60246C19.0927 1.96903 19.0927 2.56338 18.7218 2.92998L7.79675 13.7251C7.42573 14.0916 6.82423 14.0916 6.45324 13.725Z"
-                            fill="white"
-                          />
-                        </svg>
-                      </label>
-                      <div class="inline-flex gap-5 items-center">
-                        <span class="text-base font-semibold text-[#232F3E]">
-                          Additional Product
-                        </span>
-                        <span class=" p-1 text-xs bg-transparent text-white relative">
-                          <div class="h-[25px] w-[66px]"></div>
-                          <span class="z-50 absolute top-1/4 w-full ">
-                            {" "}
-                            40% OFF
-                          </span>
-
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="absolute top-0 -left-2 h-full"
-                            width="66"
-                            height="25"
-                            viewBox="0 0 66 25"
-                            fill="none"
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M11.7915 0.864591C12.3529 0.310608 13.1099 0 13.8987 0H63C64.6569 0 66 1.34315 66 3V22C66 23.6569 64.6569 25 63 25H13.8987C13.1099 25 12.3529 24.6894 11.7915 24.1354L1.44271 13.9236C0.649052 13.1405 0.649051 11.8595 1.44271 11.0764L11.7915 0.864591Z"
-                              fill="#CA232C"
-                            />
-                          </svg>
-                        </span>
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        class="w-[66px] h-[42px] bg-white shadow border border-[#DDD] rounded-[5px] flex items-center gap-4 px-2.5 py-2"
-                        style="background: linear-gradient(180deg, #FFF 0%, #FAFAFA 100%);
-                      box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.10);"
-                      >
-                        <span>1x</span>
-                        <span>
-                          <svg
-                            width="10"
-                            height="6"
-                            viewBox="0 0 10 6"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M5 6L10 0H0L5 6Z"
-                              fill="black"
-                            />
-                          </svg>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="flex w-full h-[65px]   bg-white justify-between px-4 -y-2 items-center">
-                    <div class="flex items-center gap-4">
-                      <label
-                        class="custom-input border border-[#CCC] flex items-center justify-center rounded-[4px] bg-white h-[32px] w-[32px]"
-                        for="additional"
-                        style="box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25) inset;"
-                        tabIndex={1}
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="19"
-                          height="14"
-                          viewBox="0 0 19 14"
-                          fill="none"
-                        >
-                          <path
-                            d="M6.45324 13.725L0.278237 7.62349C-0.0927457 7.25692 -0.0927457 6.66257 0.278237 6.29596L1.62171 4.96843C1.99269 4.60182 2.59424 4.60182 2.96522 4.96843L7.125 9.07869L16.0348 0.274927C16.4058 -0.0916425 17.0073 -0.0916425 17.3783 0.274927L18.7218 1.60246C19.0927 1.96903 19.0927 2.56338 18.7218 2.92998L7.79675 13.7251C7.42573 14.0916 6.82423 14.0916 6.45324 13.725Z"
-                            fill="#F0F2F5"
-                          />
-                        </svg>
-                      </label>
-
-                      <div class="inline-flex gap-5 items-center">
-                        <span class="text-base font-semibold text-[#232F3E]">
-                          Additional Product
-                        </span>
-                        <span class=" p-1 text-xs bg-transparent text-white relative">
-                          <div class="h-[25px] w-[66px]"></div>
-                          <span class="z-50 absolute top-1/4 w-full ">
-                            {" "}
-                            40% OFF
-                          </span>
-
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="absolute top-0 -left-2 h-full"
-                            width="66"
-                            height="25"
-                            viewBox="0 0 66 25"
-                            fill="none"
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M11.7915 0.864591C12.3529 0.310608 13.1099 0 13.8987 0H63C64.6569 0 66 1.34315 66 3V22C66 23.6569 64.6569 25 63 25H13.8987C13.1099 25 12.3529 24.6894 11.7915 24.1354L1.44271 13.9236C0.649052 13.1405 0.649051 11.8595 1.44271 11.0764L11.7915 0.864591Z"
-                              fill="#CA232C"
-                            />
-                          </svg>
-                        </span>
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        class="w-[66px] h-[42px] bg-white shadow border border-[#DDD] rounded-[5px] flex items-center gap-4 px-2.5 py-2"
-                        style="background: linear-gradient(180deg, #FFF 0%, #FAFAFA 100%);
-                      box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.10);"
-                      >
-                        <span>1x</span>
-                        <span>
-                          <svg
-                            width="10"
-                            height="6"
-                            viewBox="0 0 10 6"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M5 6L10 0H0L5 6Z"
-                              fill="black"
-                            />
-                          </svg>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="flex w-full h-[65px]   bg-white justify-between px-4 -y-2 items-center">
-                    <div class="flex items-center gap-4">
-                      <label
-                        class="custom-input border border-[#CCC] flex items-center justify-center rounded-[4px] bg-white h-[32px] w-[32px]"
-                        for="additional"
-                        style="box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25) inset;"
-                        tabIndex={1}
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="19"
-                          height="14"
-                          viewBox="0 0 19 14"
-                          fill="none"
-                        >
-                          <path
-                            d="M6.45324 13.725L0.278237 7.62349C-0.0927457 7.25692 -0.0927457 6.66257 0.278237 6.29596L1.62171 4.96843C1.99269 4.60182 2.59424 4.60182 2.96522 4.96843L7.125 9.07869L16.0348 0.274927C16.4058 -0.0916425 17.0073 -0.0916425 17.3783 0.274927L18.7218 1.60246C19.0927 1.96903 19.0927 2.56338 18.7218 2.92998L7.79675 13.7251C7.42573 14.0916 6.82423 14.0916 6.45324 13.725Z"
-                            fill="#F0F2F5"
-                          />
-                        </svg>
-                      </label>
-
-                      <div class="inline-flex gap-5 items-center">
-                        <span class="text-base font-semibold text-[#232F3E]">
-                          Additional Product
-                        </span>
-                        <span class=" p-1 text-xs bg-transparent text-white relative">
-                          <div class="h-[25px] w-[66px]"></div>
-                          <span class="z-50 absolute top-1/4 w-full ">
-                            {" "}
-                            40% OFF
-                          </span>
-
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="absolute top-0 -left-2 h-full"
-                            width="66"
-                            height="25"
-                            viewBox="0 0 66 25"
-                            fill="none"
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M11.7915 0.864591C12.3529 0.310608 13.1099 0 13.8987 0H63C64.6569 0 66 1.34315 66 3V22C66 23.6569 64.6569 25 63 25H13.8987C13.1099 25 12.3529 24.6894 11.7915 24.1354L1.44271 13.9236C0.649052 13.1405 0.649051 11.8595 1.44271 11.0764L11.7915 0.864591Z"
-                              fill="#CA232C"
-                            />
-                          </svg>
-                        </span>
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        class="w-[66px] h-[42px] bg-white shadow border border-[#DDD] rounded-[5px] flex items-center gap-4 px-2.5 py-2"
-                        style="background: linear-gradient(180deg, #FFF 0%, #FAFAFA 100%);
-                      box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.10);"
-                      >
-                        <span>1x</span>
-                        <span>
-                          <svg
-                            width="10"
-                            height="6"
-                            viewBox="0 0 10 6"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              clip-rule="evenodd"
-                              d="M5 6L10 0H0L5 6Z"
-                              fill="black"
-                            />
-                          </svg>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <ReminderCard />
                 {/* LIST */}
                 <div class="flex mx-4 lg:mx-auto flex-col gap-2 mt-3">
                   <div class="flex items-center gap-4">
@@ -2667,22 +2189,7 @@ export default component$(() => {
 
                 {/* TRUST */}
 
-                <div class="flex mx-4 lg:mx-auto gap-2 items-center py-[10px] mb-[46px]">
-                  <div class=" w-[92px] h-[22px] -mt-2">
-                    <TrustPilot class="object-fit align-middle" />
-                  </div>
-
-                  <div class="text-[#181818] text-[12px] lg:text-sm font-bold">
-                    Your Shop
-                  </div>
-                  <div class=" w-[100px]  ">
-                    <Image class="object-fit align-middle" />
-                  </div>
-
-                  <p class="text-[#181818] text-[12px] lg:text-sm font-bold">
-                    4.9 out of 5
-                  </p>
-                </div>
+                <ShopTrustInfo />
               </section>
             </div>
           </div>

@@ -55,6 +55,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
               rewind      : true,
               pagination  : false,
               isNavigation: false,
+              arrows:false,
               breakpoints : {
                 600: {
                   fixedWidth : 50,

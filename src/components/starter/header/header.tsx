@@ -150,7 +150,7 @@ export default component$(() => {
                 <div class="nav-item opacity-70 hover:opacity-100 cursor-pointer inline-flex items-center">
                   {" "}
                   Sale
-                  <span class="relative">
+                  <span class="relative ml-1">
                     <div class="absolute ml-1 flex items-center inset-0 justify-center text-[#FFF] text-center font-Roboto text-[12px] font-bold leading-[116.667%]">
                       40% OFF
                     </div>
@@ -171,7 +171,7 @@ export default component$(() => {
                 <div class="nav-item opacity-70 hover:opacity-100 cursor-pointer relative inline-flex">
                   {" "}
                   All products
-                  <span class="relative">
+                  <span class="relative ml-1">
                     <div class="absolute ml-1 text-white text-center font-Roboto text-[12px] font-bold leading-4/3 flex items-center justify-center inset-0 ">
                       72
                     </div>
@@ -194,8 +194,8 @@ export default component$(() => {
 
             <div class=" rounded-md w-[181px] h-[86px] bg-[#37424F] flex justify-center items-center">
               <div class="flex items-center gap-2 ">
-                <span class="relative ">
-                  <div class="absolute -top-1 -right-1 text-white text-center font-Roboto  h-[20px] w-[20px] flex items-center justify-center text-[11px]  rounded-full border-2 border-solid border-[#37424F] bg-[#28A744] font-bold pt-1">
+                <div class="flex-none relative ">
+                  <div class="absolute -top-1 -right-1 text-white text-center font-Roboto  h-[20px] w-[20px] flex justify-center text-[11px]  rounded-full border-2 border-solid border-[#37424F] bg-[#28A744] font-bold p-[3%]">
                     3
                   </div>
                   <svg
@@ -210,7 +210,7 @@ export default component$(() => {
                       fill="white"
                     />
                   </svg>
-                </span>
+                </div>
 
                 <div class="flex flex-col gap-0.5">
                   <span class="text-white opacity-50 text-sm text-center">

@@ -8,6 +8,7 @@ export const DataContext =
 import type { DocumentHead } from "@builder.io/qwik-city";
 import FilterModalMobile from "~/components/FilterModalMobile";
 import Filters from "~/components/Filters";
+import { SortDropDown } from "~/components/SortDropdown";
 
 export const useProductsApi = routeLoader$(async () => {
   const response = await fetch(
@@ -33,7 +34,11 @@ export default component$(() => {
   return (
     <main class="section mt-[54px] text-xl">
       {isOpen.value && (
-        <FilterModalMobile onClick$={() => (isOpen.value = false)} />
+        <FilterModalMobile
+          onClick$={() => {
+            isOpen.value = false;
+          }}
+        />
       )}
       <section class="">
         <div class="container mx-auto">
@@ -95,31 +100,7 @@ box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.10);"
                         </svg>
                       </span>
                     </div>
-                    <div
-                      class="select flex px-[12px] justify-between w-[134px] h-[42px] items-center rounded-[5px] relative border border-[#ddd]"
-                      style="background: linear-gradient(180deg, #FFF 0%, #FAFAFA 100%);
-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.10);"
-                    >
-                      <span class="text-[#232F3E] font-bold text-base">
-                        Newest First
-                      </span>
-                      <span>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="10"
-                          height="6"
-                          viewBox="0 0 10 6"
-                          fill="none"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M5 6L10 0H0L5 6Z"
-                            fill="black"
-                          />
-                        </svg>
-                      </span>
-                    </div>
+                    <SortDropDown />
                   </div>
                 </div>
 

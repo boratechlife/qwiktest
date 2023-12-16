@@ -2,7 +2,7 @@
 import { qwikify$ } from "@builder.io/qwik-react";
 
 // Create React component standard way
-function Greetings({ images }) {
+function Slider({ images }) {
   function formatImageUrl(item) {
     return `https://s.fysia.se/${item.imageName}-${item.number}-${item.sizes[1]}.${item.formats[1]}`;
   }
@@ -13,8 +13,8 @@ function Greetings({ images }) {
         className="splide"
         aria-label="The carousel with thumbnails. Selecting a thumbnail will change the Beautiful Gallery carousel."
       >
-        <div className="splide__arrows">
-          <button className="splide__arrow splide__arrow--prev  transform  w-[60.968px] h-[90px] rounded  bg-[#1D6EC1] text-white">
+        <div className="splide__arrows products-slider">
+          <button className="splide__arrow splide__arrow--prev  transform  w-[60.968px] h-[90px] rounded  bg-[#1D6EC1] max-sm:-translate-x-8 text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="32"
@@ -27,7 +27,7 @@ function Greetings({ images }) {
               />
             </svg>
           </button>
-          <button className="splide__arrow splide__arrow--next transform w-[60.968px] h-[90px] rounded  bg-[#1D6EC1] text-white">
+          <button className="splide__arrow splide__arrow--next transform w-[60.968px] h-[90px] rounded   max-sm:translate-x-5 bg-[#1D6EC1] text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="32"
@@ -70,7 +70,7 @@ function Greetings({ images }) {
 
       <section
         id="thumbnail-carousel"
-        className="splide"
+        className="splide hidden lg:block"
         aria-label="The carousel with thumbnails. Selecting a thumbnail will change the Beautiful Gallery carousel."
       >
         <div className="splide__track">
@@ -96,4 +96,4 @@ function Greetings({ images }) {
 }
 
 // Convert React component to Qwik component
-export const Carousel = qwikify$(Greetings);
+export const Carousel = qwikify$(Slider);

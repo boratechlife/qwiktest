@@ -47,14 +47,7 @@ export const TableApp = qwikify$(() => {
       <h1>Hello from React</h1>
 
       <div style={{ height: 400, width: "100%" }}>
-        <DataGrid
-          rows={rows}
-          columns={columns}
-          pageSize={5}
-          rowsPerPageOptions={[5]}
-          checkboxSelection
-          disableSelectionOnClick
-        />
+        <DataGrid rows={rows} columns={columns} checkboxSelection />
       </div>
     </>
   );
