@@ -9,6 +9,9 @@ import ReviewCard from "~/components/ReviewCard";
 import MobileProductCard from "~/components/MobileProductCard";
 import ProductImageReviews from "~/components/ProductImageReviews";
 import { MobileCarouselSlide } from "~/integrations/react/MobileCarousel";
+import CustomProductCarousel from "~/components/CustomProductCarousel";
+import CustomProductSlider from "~/components/CustomProductSlider";
+import MobileSwiperCarousel from "~/components/MobileSwiperCarousel";
 
 export const useProducts = routeLoader$(async () => {
   const response = await fetch(
@@ -44,7 +47,7 @@ export default component$(() => {
           <div class="w-full flex flex-wrap lg:flex-nowrap  gap-[36px]">
             <div class="w-full lg:w-1/2 mx-4 lg:mx-auto">
               <div class=" bg-gray-100 ">
-                <Carousel images={images} />
+                <CustomProductCarousel images={images} />
               </div>
               <div class="w-full hidden lg:block">
                 <ReviewCard />
@@ -1615,7 +1618,8 @@ export default component$(() => {
                 <h4>Hurry up! If you order in the next </h4>
                 <h4 class="text-[#CA232C]">6 hours : 7 min : 29 sec</h4>
                 <h4>we will ship your product today</h4>
-                <MobileCarouselSlide />
+  
+                <MobileSwiperCarousel  />
 
                 <div class="flex flex-col w-full px-2">
                   <div class="flex items-center mb-1  gap-2 justify-start">
@@ -2745,7 +2749,7 @@ export default component$(() => {
         <div class="container mx-auto py-20">
           <div class="w-full">
             {bestSellerProducts.value.products && (
-              <BestSellerCarousel
+              <CustomProductSlider
                 bestSellerProducts={bestSellerProducts.value.products}
               />
             )}

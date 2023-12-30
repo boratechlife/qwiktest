@@ -36,6 +36,8 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
           rel="stylesheet"
         />
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
         <script
           defer
           dangerouslySetInnerHTML=" document.addEventListener( 'DOMContentLoaded', function () {

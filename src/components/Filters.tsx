@@ -1,10 +1,12 @@
 import { component$, useSignal } from "@builder.io/qwik";
 import { MUISlider } from "~/integrations/react/mui";
+import PriceRangeSlider from "./PriceRangeSlider";
 export default component$(() => {
   const count = useSignal([100, 1000]);
   return (
     <div class="w-full lg:w-[270px] bg-[#F0F2F5]  h-auto rounded-[10px] divide-y py-[23px]">
       <div class="w-full px-[35px]">
+       
         <h4 class="flex gap-2 items-center font-bold">
           <span class="text-lg font-bold leading-[40px] text-[#232F3E]">
             Subcategories
@@ -122,7 +124,7 @@ export default component$(() => {
           </li>
         </ul>
       </div>
-
+      <PriceRangeSlider />
       <div class="w-full px-[35px]">
         <h4 class="flex gap-2 items-center font-bold">
           <span class="text-lg font-bold leading-[40px] text-[#232F3E]">
