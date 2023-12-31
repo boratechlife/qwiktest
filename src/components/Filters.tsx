@@ -1,6 +1,6 @@
 import { component$, useSignal } from "@builder.io/qwik";
-import { MUISlider } from "~/integrations/react/mui";
 import PriceRangeSlider from "./PriceRangeSlider";
+import { StarIcon, SubCatLabelIcon } from "./starter/icons/qwik";
 export default component$(() => {
   const count = useSignal([100, 1000]);
   return (
@@ -15,19 +15,7 @@ export default component$(() => {
             <div class="absolute w-full left-0  top-2.5 flex items-center justify-center  tranform -translate-y-1/4 h-full text-white text-[10px]">
               10
             </div>
-            <svg
-              width="22"
-              height="17"
-              class="h-[17px] w-[22px]"
-              viewBox="0 0 22 17"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6.09998 1.09288C6.66986 0.400887 7.51933 0 8.41577 0H19C20.6569 0 22 1.34315 22 3V14C22 15.6569 20.6569 17 19 17H8.41577C7.51933 17 6.66986 16.5991 6.09998 15.9071L1.57057 10.4071C0.658292 9.29935 0.658292 7.70065 1.57057 6.59288L6.09998 1.09288Z"
-                fill="#232F3E"
-              />
-            </svg>
+<SubCatLabelIcon />
           </div>
         </h4>
         <ul class="flex flex-col gap-3 pb-[19px]">
@@ -124,7 +112,6 @@ export default component$(() => {
           </li>
         </ul>
       </div>
-      <PriceRangeSlider />
       <div class="w-full px-[35px]">
         <h4 class="flex gap-2 items-center font-bold">
           <span class="text-lg font-bold leading-[40px] text-[#232F3E]">
@@ -134,19 +121,7 @@ export default component$(() => {
             <div class="absolute w-full left-0  top-2.5 flex items-center justify-center  tranform -translate-y-1/4 h-full text-white text-[10px]">
               10
             </div>
-            <svg
-              width="22"
-              height="17"
-              class="h-[17px] w-[22px]"
-              viewBox="0 0 22 17"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6.09998 1.09288C6.66986 0.400887 7.51933 0 8.41577 0H19C20.6569 0 22 1.34315 22 3V14C22 15.6569 20.6569 17 19 17H8.41577C7.51933 17 6.66986 16.5991 6.09998 15.9071L1.57057 10.4071C0.658292 9.29935 0.658292 7.70065 1.57057 6.59288L6.09998 1.09288Z"
-                fill="#232F3E"
-              />
-            </svg>
+<SubCatLabelIcon />
           </div>
         </h4>
         <ul class="grid grid-cols-2 gap-3 pb-[19px]">
@@ -224,30 +199,8 @@ export default component$(() => {
         <h4 class="flex gap-2 items-center font-bold mb-2 text-lg  leading-[40px] text-[#232F3E]">
           <span>Price</span>
         </h4>
-        <MUISlider
-          value={count.value}
-          min={100}
-          max={1000}
-          valueLabelDisplay="auto"
-          onChange$={(_, value) => {
-            count.value = value as number[];
-          }}
-        />
+<PriceRangeSlider />
 
-        <div class="flex justify-between items-center w-10/12 mt-4">
-          <div
-            class="w-[70px] h-[42px] rounded-[4px] border border-[#ccc] flex items-center justify-center "
-            style="box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25) inset;"
-          >
-            ${count.value[0]}
-          </div>
-          <div
-            class="w-[70px] h-[42px] rounded-[4px] border border-[#ccc] flex items-center justify-center "
-            style="box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25) inset;"
-          >
-            ${count.value[1]}
-          </div>
-        </div>
       </div>
 
       <div class="w-full p-4">
@@ -259,19 +212,7 @@ export default component$(() => {
             <div class="absolute w-full left-0  top-2.5 flex items-center justify-center  tranform -translate-y-1/4 h-full text-white text-[10px]">
               1
             </div>
-            <svg
-              width="22"
-              height="17"
-              class="h-[17px] w-[22px]"
-              viewBox="0 0 22 17"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6.09998 1.09288C6.66986 0.400887 7.51933 0 8.41577 0H19C20.6569 0 22 1.34315 22 3V14C22 15.6569 20.6569 17 19 17H8.41577C7.51933 17 6.66986 16.5991 6.09998 15.9071L1.57057 10.4071C0.658292 9.29935 0.658292 7.70065 1.57057 6.59288L6.09998 1.09288Z"
-                fill="#232F3E"
-              />
-            </svg>
+            <SubCatLabelIcon />
           </div>
         </h4>
 
@@ -284,75 +225,20 @@ export default component$(() => {
           <li class="flex gap-2.5 items-center ">
             <div class="flex items-center ">
               <span class="text-yellow-500">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  class="h-[17px] w-[17px]"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7z"
-                  />
-                </svg>
+<StarIcon />
               </span>
 
               <span class="text-yellow-500">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  class="h-[17px] w-[17px]"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7z"
-                  />
-                </svg>
+              <StarIcon />
               </span>
               <span class="text-yellow-500">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  class="h-[17px] w-[17px]"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7z"
-                  />
-                </svg>
+              <StarIcon />
               </span>
               <span class="text-yellow-500">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  class="h-[17px] w-[17px]"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7z"
-                  />
-                </svg>
+              <StarIcon />
               </span>
               <span class="text-yellow-500">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  class="h-[17px] w-[17px]"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7z"
-                  />
-                </svg>
+              <StarIcon />
               </span>
             </div>
             <span class="text-[#5F6061] text-sm">& Up</span>
@@ -363,75 +249,20 @@ export default component$(() => {
           <li class="flex gap-2.5 items-center ">
             <div class="flex items-center ">
               <span class="text-yellow-500">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  class="h-[17px] w-[17px]"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7z"
-                  />
-                </svg>
+<StarIcon />
               </span>
 
               <span class="text-yellow-500">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  class="h-[17px] w-[17px]"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7z"
-                  />
-                </svg>
+<StarIcon />
               </span>
               <span class="text-yellow-500">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  class="h-[17px] w-[17px]"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7z"
-                  />
-                </svg>
+<StarIcon />
               </span>
               <span class="text-yellow-500">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  class="h-[17px] w-[17px]"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7z"
-                  />
-                </svg>
+<StarIcon />
               </span>
               <span class="text-white">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  class="h-[17px] w-[17px]"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7z"
-                  />
-                </svg>
+<StarIcon />
               </span>
             </div>
             <span class="text-[#5F6061] text-sm">& Up</span>
@@ -442,75 +273,20 @@ export default component$(() => {
           <li class="flex gap-2.5 items-center ">
             <div class="flex items-center ">
               <span class="text-yellow-500">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  class="h-[17px] w-[17px]"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7z"
-                  />
-                </svg>
+<StarIcon />
               </span>
 
               <span class="text-yellow-500">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  class="h-[17px] w-[17px]"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7z"
-                  />
-                </svg>
+<StarIcon />
               </span>
               <span class="text-yellow-500">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  class="h-[17px] w-[17px]"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7z"
-                  />
-                </svg>
+<StarIcon />
               </span>
               <span class="text-white">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  class="h-[17px] w-[17px]"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7z"
-                  />
-                </svg>
+<StarIcon />
               </span>
               <span class="text-white">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  class="h-[17px] w-[17px]"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7z"
-                  />
-                </svg>
+<StarIcon />
               </span>
             </div>
             <span class="text-[#5F6061] text-sm">& Up</span>
@@ -520,75 +296,20 @@ export default component$(() => {
           <li class="flex gap-2.5 items-center ">
             <div class="flex items-center ">
               <span class="text-yellow-500">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  class="h-[17px] w-[17px]"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7z"
-                  />
-                </svg>
+<StarIcon />
               </span>
 
               <span class="text-yellow-500">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  class="h-[17px] w-[17px]"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7z"
-                  />
-                </svg>
+<StarIcon />
               </span>
               <span class="text-white">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  class="h-[17px] w-[17px]"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7z"
-                  />
-                </svg>
+<StarIcon />
               </span>
               <span class="text-white">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  class="h-[17px] w-[17px]"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7z"
-                  />
-                </svg>
+<StarIcon />
               </span>
               <span class="text-white">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  class="h-[17px] w-[17px]"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7z"
-                  />
-                </svg>
+<StarIcon />
               </span>
             </div>
             <span class="text-[#5F6061] text-sm">& Up</span>
@@ -599,75 +320,20 @@ export default component$(() => {
           <li class="flex gap-2.5 items-center ">
             <div class="flex items-center ">
               <span class="text-yellow-500">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  class="h-[17px] w-[17px]"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7z"
-                  />
-                </svg>
+<StarIcon />
               </span>
 
               <span class="text-white">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  class="h-[17px] w-[17px]"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7z"
-                  />
-                </svg>
+<StarIcon />
               </span>
               <span class="text-white">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  class="h-[17px] w-[17px]"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7z"
-                  />
-                </svg>
+<StarIcon />
               </span>
               <span class="text-white">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  class="h-[17px] w-[17px]"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7z"
-                  />
-                </svg>
+<StarIcon />
               </span>
               <span class="text-white">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  class="h-[17px] w-[17px]"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7z"
-                  />
-                </svg>
+<StarIcon />
               </span>
             </div>
             <span class="text-[#5F6061] text-sm">& Up</span>

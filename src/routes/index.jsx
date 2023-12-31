@@ -6,6 +6,7 @@ export const DataContext = createContextId("docs.theme-context");
 
 import FilterModalMobile from "~/components/FilterModalMobile";
 import Filters from "~/components/Filters";
+import { ArrowDownIcon, BasketIcon, FilterIcon, LoadIcon, StarIcon } from "~/components/starter/icons/qwik";
 
 export const useProductsApi = routeLoader$(async () => {
   const response = await fetch(
@@ -77,18 +78,7 @@ box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.10);"
                         Filter
                       </span>
                       <span>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="15"
-                          height="13"
-                          viewBox="0 0 15 13"
-                          fill="none"
-                        >
-                          <path
-                            d="M14.7944 1.51439L9.38208 7.97382V12.3031C9.38208 12.8695 8.73794 13.1939 8.27529 12.8736L5.92977 11.2492C5.74066 11.1192 5.62925 10.9045 5.62925 10.6782V7.97382L0.216236 1.51439C-0.292155 0.907646 0.152848 0 0.958739 0H14.0526C14.8589 0 15.2781 0.907646 14.7944 1.51439Z"
-                            fill="#99A0A7"
-                          />
-                        </svg>
+<FilterIcon />
                       </span>
                     </div>
                     <div
@@ -100,20 +90,7 @@ box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.10);"
                         Newest First
                       </span>
                       <span>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="10"
-                          height="6"
-                          viewBox="0 0 10 6"
-                          fill="none"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M5 6L10 0H0L5 6Z"
-                            fill="black"
-                          />
-                        </svg>
+                        <ArrowDownIcon />
                       </span>
                     </div>
                   </div>
@@ -180,66 +157,11 @@ box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.10);"
                           </div>
                           <div class="flex gap-1 lg:gap-2 items-center">
                             <div class="flex items-center text-yellow-500">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="32"
-                                height="32"
-                                class="h-3 w-3 lg:h-[17px] lg:w-[17px]"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  fill="currentColor"
-                                  d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7z"
-                                />
-                              </svg>
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="32"
-                                height="32"
-                                class="h-3 w-3 lg:h-[17px] lg:w-[17px]"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  fill="currentColor"
-                                  d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7z"
-                                />
-                              </svg>
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="32"
-                                height="32"
-                                class="h-3 w-3 lg:h-[17px] lg:w-[17px]"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  fill="currentColor"
-                                  d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7z"
-                                />
-                              </svg>
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="32"
-                                height="32"
-                                class="h-3 w-3 lg:h-[17px] lg:w-[17px]"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  fill="currentColor"
-                                  d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7z"
-                                />
-                              </svg>
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="32"
-                                height="32"
-                                class="h-3 w-3 lg:h-[17px] lg:w-[17px]"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  fill="currentColor"
-                                  d="M7.625 6.4L12 .725L16.375 6.4l6.85 2.3l-4.325 6.125l.175 6.825L12 19.675L4.925 21.65L5.1 14.8L.8 8.7z"
-                                />
-                              </svg>
+<StarIcon />
+<StarIcon />
+<StarIcon />
+<StarIcon />
+<StarIcon />
                             </div>
                             <div class="text-[13px] text-[#5F6061]">
                               3 reviews
@@ -261,64 +183,7 @@ box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.10);"
                             box-shadow: 0px 3px 13px 0px rgba(0, 153, 0, 0.36),
                             0px 2px 0px 0px #090;"
                             >
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="22"
-                                height="21"
-                                viewBox="0 0 22 21"
-                                fill="none"
-                              >
-                                <g
-                                  opacity="0.5"
-                                  filter="url(#filter0_d_49_5905)"
-                                >
-                                  <path
-                                    fill-rule="evenodd"
-                                    clip-rule="evenodd"
-                                    d="M16.696 15.4375C15.7421 15.4375 14.9688 16.235 14.9688 17.2188C14.9688 18.2025 15.7421 19 16.696 19C17.65 19 18.4233 18.2025 18.4233 17.2188C18.4233 16.235 17.65 15.4375 16.696 15.4375ZM6.33274 15.4375C5.37878 15.4375 4.60547 16.235 4.60547 17.2188C4.60547 18.2025 5.37878 19 6.33274 19C7.28671 19 8.06002 18.2025 8.06002 17.2188C8.06002 16.235 7.28671 15.4375 6.33274 15.4375ZM20.4945 1.66005C20.2746 1.35972 19.9395 1.1875 19.5746 1.1875H4.38861L4.303 0.724004C4.22542 0.303926 3.86928 0 3.45462 0H0.863638C0.386658 0 0 0.39874 0 0.890625C0 1.38251 0.386658 1.78125 0.863638 1.78125H2.73993L4.90921 13.526C4.98679 13.9461 5.34293 14.25 5.75759 14.25H17.5606C18.0376 14.25 18.4243 13.8513 18.4243 13.3594C18.4243 12.8675 18.0376 12.4688 17.5606 12.4688H6.47221L6.14324 10.6875H17.6004C18.1148 10.6875 18.5668 10.3359 18.7082 9.82586L20.6823 2.70145C20.7823 2.33963 20.7137 1.96041 20.4945 1.66005Z"
-                                    fill="white"
-                                  />
-                                </g>
-                                <defs>
-                                  <filter
-                                    id="filter0_d_49_5905"
-                                    x="-1"
-                                    y="0"
-                                    width="22.7266"
-                                    height="21"
-                                    filterUnits="userSpaceOnUse"
-                                    color-interpolation-filters="sRGB"
-                                  >
-                                    <feFlood
-                                      flood-opacity="0"
-                                      result="BackgroundImageFix"
-                                    />
-                                    <feColorMatrix
-                                      in="SourceAlpha"
-                                      type="matrix"
-                                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                                      result="hardAlpha"
-                                    />
-                                    <feOffset dy="1" />
-                                    <feGaussianBlur stdDeviation="0.5" />
-                                    <feColorMatrix
-                                      type="matrix"
-                                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0"
-                                    />
-                                    <feBlend
-                                      mode="normal"
-                                      in2="BackgroundImageFix"
-                                      result="effect1_dropShadow_49_5905"
-                                    />
-                                    <feBlend
-                                      mode="normal"
-                                      in="SourceGraphic"
-                                      in2="effect1_dropShadow_49_5905"
-                                      result="shape"
-                                    />
-                                  </filter>
-                                </defs>
-                              </svg>
+<BasketIcon />
 
                               <span
                                 class="text-[18px] font-bold text-white"
@@ -351,21 +216,7 @@ box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.10);"
                     style="background: linear-gradient(180deg, #1D6EC1 0%, #265B9D 100%);"
                   >
                     <span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="18"
-                        height="18"
-                        viewBox="0 0 18 18"
-                        fill="none"
-                      >
-                        <path
-                          opacity="0.5"
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M8.99448 2.90323C10.5564 2.90185 12.0287 3.48416 13.1632 4.54645L11.6481 6.06154C11.0994 6.61025 11.488 7.54839 12.264 7.54839H17.129C17.6101 7.54839 18 7.15845 18 6.67742V1.81237C18 1.03642 17.0619 0.647819 16.5132 1.19649L15.2171 2.4926C13.6013 0.948484 11.4114 0 9 0C4.60208 0 0.941117 3.1545 0.155903 7.32426C0.105569 7.59168 0.312278 7.83871 0.584383 7.83871H2.66393C2.86458 7.83871 3.03797 7.70128 3.08675 7.50665C3.75677 4.83307 6.18351 2.90569 8.99448 2.90323ZM5.73601 10.4516H0.870968C0.38994 10.4516 0 10.8416 0 11.3226V16.1876C0 16.9636 0.938141 17.3522 1.48681 16.8035L2.78292 15.5074C4.39871 17.0515 6.58858 18 9 18C13.3979 18 17.0589 14.8455 17.8441 10.6758C17.8945 10.4084 17.6878 10.1614 17.4157 10.1614H15.3361C15.1354 10.1614 14.962 10.2988 14.9133 10.4934C14.2429 13.1682 11.8152 15.0943 9.00566 15.0968C7.44369 15.0982 5.97128 14.5159 4.83677 13.4536L6.3519 11.9385C6.90057 11.3898 6.51197 10.4516 5.73601 10.4516Z"
-                          fill="white"
-                        />
-                      </svg>
+<LoadIcon />
                     </span>
 
                     <p class="text-white text-center text-base font-bold">

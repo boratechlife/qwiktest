@@ -1,0 +1,1 @@
+import{a as s,w as o,v as r,_ as t}from"./q-cd53cf30.js";import{F as a}from"./q-24dd0aaf.js";const i=a(o("s_XV47s3MNTEg")),d=s(r(()=>t(()=>import("./q-c405bf92.js"),["build/q-c405bf92.js","build/q-cd53cf30.js"]),"s_AnxHh3KwHLM"));export{d as default,i as useProductDetails};

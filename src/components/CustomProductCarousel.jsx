@@ -1,4 +1,5 @@
 import { component$, useStore, $ } from "@builder.io/qwik";
+import { NextIcon, PrevIcon } from "./starter/icons/qwik";
 
 export default component$(({ images }) => {
 
@@ -64,34 +65,12 @@ export default component$(({ images }) => {
       <button
       onClick$={() => moveToIndex(state.currentIndex - 1)} disabled={state.currentIndex == 0}
       class=" prev absolute left-0 top-1/2 transform flex items-center justify-center -translate-y-[60%]  w-[60.968px] h-[90px] rounded  bg-[#1D6EC1] text-white">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
-              class="transform rotate-180"
-              viewBox="0 0 1024 1024"
-            >
-              <path
-                fill="currentColor"
-                d="M338.752 104.704a64 64 0 0 0 0 90.496l316.8 316.8l-316.8 316.8a64 64 0 0 0 90.496 90.496l362.048-362.048a64 64 0 0 0 0-90.496L429.248 104.704a64 64 0 0 0-90.496 0z"
-              />
-            </svg>
+<PrevIcon />
           </button>
           <button 
           onClick$={() => moveToIndex(state.currentIndex + 1)} disabled={state.currentIndex == images.length -1}
           class=" absolute right-0 top-1/2 arrow--next flex items-center justify-center  transform -translate-y-[60%] w-[60.968px] h-[90px] rounded  bg-[#1D6EC1] text-white">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
-              class="transform rotate-180"
-              viewBox="0 0 1024 1024"
-            >
-              <path
-                fill="currentColor"
-                d="M685.248 104.704a64 64 0 0 1 0 90.496L368.448 512l316.8 316.8a64 64 0 0 1-90.496 90.496L232.704 557.248a64 64 0 0 1 0-90.496l362.048-362.048a64 64 0 0 1 90.496 0z"
-              />
-            </svg>
+<NextIcon />
           </button>
     </div>
   );

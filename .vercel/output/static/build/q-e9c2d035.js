@@ -1,0 +1,1 @@
+import{C as t}from"./q-cd53cf30.js";const e="/build/q-ce99b10f.webp 152w",c=152,i=53,d={srcSet:e,width:c,height:i};function f(n,o,r,s){return t("img",{decoding:"async",loading:"lazy",...n},d,void 0,3,o)}export{f as N};

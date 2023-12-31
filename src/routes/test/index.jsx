@@ -14,35 +14,96 @@ export const useProductDetails = routeLoader$(async () => {
 
 export default component$(() => {
 
-    const productDetails = useProductDetails();
+  return (
+  
 
-    const { title, longDescription, images } = productDetails.value;
-
-  return (<div class="w-full mx-auto py-20">
-<swiper-container slides-per-view="3" slides-per-move="1"  pagination="true"  speed="500"  css-mode="true">
-  <swiper-slide>Slide 1</swiper-slide>
-  <swiper-slide>Slide 2</swiper-slide>
-  <swiper-slide>Slide 3</swiper-slide>
-  <swiper-slide>Slide 1</swiper-slide>
-  <swiper-slide>Slide 2</swiper-slide>
-  <swiper-slide>Slide 3</swiper-slide>
-</swiper-container>
-
-<button id='slide-prev'>Prev</button>
-<button id='slide-next'>Slide Next</button>
+<div class="swiper w-1/2 mx-auto relative py-10 ">
 
 
-<script dangerouslySetInnerHTML="  const swiperEl = document.querySelector('swiper-container');
-  const buttonEl = document.querySelector('#slide-next');
-  const buttonElPrev = document.querySelector('#slide-prev');
+  <div class="swiper-wrapper  ">
+    
+    <div class="swiper-slide px-20">
+      <div class="h-40 bg-black"></div>
+    </div>
+    <div class="swiper-slide px-20">
+      <div class="h-40 bg-red-500"></div>
+    </div>
+    <div class="swiper-slide px-20">
+      <div class="h-40 bg-green-500"></div>
+    </div>
+    
+  </div>
 
 
-  buttonElPrev.addEventListener('click', () => {
-    swiperEl.swiper.slidePrev();
-  });
-  buttonEl.addEventListener('click', () => {
-    swiperEl.swiper.slideNext();
-  });
-  "></script>
-  </div>);
+
+  <div class="swiper-pagination"></div>
+
+
+
+
+          {/* <div class="">
+        <button id='slide-prev' class="splide__arrow splide__arrow--prev  transform -translate-x-[6.5rem] w-[60.968px] h-[90px] rounded  bg-[#1D6EC1] text-white">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 1024 1024"
+          >
+            <path
+              fill="currentColor"
+              d="M338.752 104.704a64 64 0 0 0 0 90.496l316.8 316.8l-316.8 316.8a64 64 0 0 0 90.496 90.496l362.048-362.048a64 64 0 0 0 0-90.496L429.248 104.704a64 64 0 0 0-90.496 0z"
+            />
+          </svg>
+        </button>
+        <button id='slide-next' class="splide__arrow splide__arrow--next transform translate-x-10 w-[60.968px] h-[90px] rounded  bg-[#1D6EC1] text-white">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            class="transform rotate-180"
+            viewBox="0 0 1024 1024"
+          >
+            <path
+              fill="currentColor"
+              d="M685.248 104.704a64 64 0 0 1 0 90.496L368.448 512l316.8 316.8a64 64 0 0 1-90.496 90.496L232.704 557.248a64 64 0 0 1 0-90.496l362.048-362.048a64 64 0 0 1 90.496 0z"
+            />
+          </svg>
+        </button>
+      </div> */}
+
+ 
+
+  <div class="custom-button-prev    transform  flex items-center justify-center -translate-y-1/2 w-[60.968px] h-[90px] rounded  bg-[#1D6EC1] text-white absolute  left-0 z-[99999] top-1/2">
+  <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 1024 1024"
+          >
+            <path
+              fill="currentColor"
+              d="M338.752 104.704a64 64 0 0 0 0 90.496l316.8 316.8l-316.8 316.8a64 64 0 0 0 90.496 90.496l362.048-362.048a64 64 0 0 0 0-90.496L429.248 104.704a64 64 0 0 0-90.496 0z"
+            />
+          </svg>
+  </div>
+  <div class="custom-button-next  transform flex items-center justify-center -translate-y-1/2  w-[60.968px] h-[90px] rounded  bg-[#1D6EC1] text-white right-0  absolute  z-[99999]  top-1/2">
+  <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            class="transform rotate-180"
+            viewBox="0 0 1024 1024"
+          >
+            <path
+              fill="currentColor"
+              d="M685.248 104.704a64 64 0 0 1 0 90.496L368.448 512l316.8 316.8a64 64 0 0 1-90.496 90.496L232.704 557.248a64 64 0 0 1 0-90.496l362.048-362.048a64 64 0 0 1 90.496 0z"
+            />
+          </svg>
+  </div>
+
+
+  <div class="swiper-scrollbar"></div>
+
+</div>
+    );
 });

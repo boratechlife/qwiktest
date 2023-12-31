@@ -15,49 +15,40 @@ export const PriceRangeSlider = component$(() => {
     const input = e.target ;
     const value = parseInt(input.value);
 
-    if (type === 'min' && value < state.maxPrice - state.priceGap) {
+    if (type === 'min' && value <= state.maxPrice ) {
       state.minPrice = value;
-      state.left =`${(value / state.maxPrice  * 100)}%`
-    } else if (type === 'max' && value > state.minPrice + state.priceGap && value <= state.maxRange) {
-      state.maxPrice = value;
-      state.right =`${((value-state.minPrice) / state.maxPrice  * 100)}%`
+      state.left =`${parseInt((value / state.maxPrice)  * 100)}%`
+    
+    } else if (type === 'max'   && value <= state.maxPrice) {
+      
+    
+      state.right =`${100 - parseInt((value / state.maxPrice)  * 100)}%`
+      console.log(value, state.right);
     }
    
 
     // Adjust the other input's value if needed
-    if (state.maxPrice < state.minPrice + state.priceGap) {
-      state.maxPrice = state.minPrice + state.priceGap;
+    if (state.maxPrice < state.minPrice) {
+      state.maxPrice = state.minPrice ;
     }
-    if (state.minPrice > state.maxPrice - state.priceGap) {
-      state.minPrice = state.maxPrice - state.priceGap;
+    if (state.minPrice > state.maxPrice) {
+      state.minPrice = state.maxPrice ;
     }
   });
+
+  const sliderStyle = $(() => ({
+    left: `${(state.minPrice / state.maxRange) * 100}%`,
+    right: `${100 - (state.maxPrice / state.maxRange) * 100}%`
+  }));
+  
 
   const calculateLeft = $(() => `${(state.minPrice / state.maxRange) * 100}%`);
   const calculateRight = $(() => `${100 - (state.maxPrice / state.maxRange) * 100}%`);
 
   return (
-    <div class="wrapper">
+    <div class="wrapper bg-transparent">
 
-      <div class="price-input flex justify-between items-center">
-        <div class="field">
-          <input
-            type="number"
-            class="input-min"
-            value={state.minPrice}
-            onInput$={(e) => updateRange(e, 'min')}
-          />
-        </div>
-   
-        <div class="field">
-          <input
-            type="number"
-            class="input-max"
-            value={state.maxPrice}
-            onInput$={(e) => updateRange(e, 'max')}
-          />
-        </div>
-      </div>
+ 
       <div class="slider">
         <div class="progress" style={{ left: state.left, right: state.right }}></div>
       </div>
@@ -81,6 +72,21 @@ export const PriceRangeSlider = component$(() => {
           onInput$={(e) => updateRange(e, 'max')}
         />
       </div>
+
+      <div class="flex justify-between items-center w-10/12 mx-auto mt-4">
+          <div
+            class="w-[70px] h-[42px] rounded-[4px] border border-[#ccc] flex items-center justify-center "
+            style="box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25) inset;"
+          >
+            ${state.minPrice} 
+          </div>
+          <div
+            class="w-[70px] h-[42px] rounded-[4px] border border-[#ccc] flex items-center justify-center "
+            style="box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.25) inset;"
+          >
+            ${state.maxPrice}
+          </div>
+        </div>
     </div>
   );
 });

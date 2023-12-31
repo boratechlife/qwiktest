@@ -1,4 +1,4 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useOnWindow, $ } from "@builder.io/qwik";
 import {
   QwikCityProvider,
   RouterOutlet,
@@ -7,8 +7,10 @@ import {
 import { RouterHead } from "./components/router-head/router-head";
 
 import "./global.css";
-// Import Swiper styles
-import "swiper/css";
+
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+
 
 export default component$(() => {
   /**
@@ -17,6 +19,57 @@ export default component$(() => {
    *
    * Don't remove the `<head>` and `<body>` elements.
    */
+  useOnWindow('load',$((event) => {
+    const swiper = new Swiper(".swiper-products", {
+      // Optional parameters
+      loop: true,
+      speed:500,
+      cssMode:true,
+      slidesPerView:4,
+      modules: [Navigation, Pagination],
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    
+      // Navigation arrows
+      navigation: {
+        nextEl: ".custom-button-next",
+        prevEl: ".custom-button-prev",
+      },
+    
+      // And if we need scrollbar
+      scrollbar: {
+        el: ".swiper-scrollbar",
+      },
+    });
+
+
+    const swiperMobile = new Swiper(".swiperMobile", {
+      // Optional parameters
+      loop: true,
+      speed:500,
+      cssMode:true,
+      slidesPerView:1,
+      modules: [Navigation, Pagination],
+      //  pagination="false"  
+    
+      // If we need pagination
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    
+      // Navigation arrows
+      navigation: {
+        nextEl: ".custom-button-next",
+        prevEl: ".custom-button-prev",
+      },
+    
+      // And if we need scrollbar
+      scrollbar: {
+        el: ".swiper-scrollbar",
+      },
+    });
+  }))
 
   return (
     <QwikCityProvider>
@@ -24,52 +77,10 @@ export default component$(() => {
         <meta charSet="utf-8" />
         <link rel="manifest" href="/manifest.json" />
 
-        <script
-          src="
-https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
-"
-        ></script>
-        <link
-          href="
-https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
-"
-          rel="stylesheet"
-        />
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 
-        <script
-          defer
-          dangerouslySetInnerHTML=" document.addEventListener( 'DOMContentLoaded', function () {
-          
-           
-           
-            var main = new Splide( '#main-carousel', {
-              type      : 'fade',
-              pagination: false,
-              arrows    : true,
-            } );
-          
-            var thumbnails = new Splide( '#thumbnail-carousel', {
-              fixedWidth  : 60,
-              fixedHeight : 60,
-              gap         : 10,
-              rewind      : true,
-              pagination  : false,
-              isNavigation: false,
-              breakpoints : {
-                600: {
-                  fixedWidth : 50,
-                  fixedHeight: 50,
-                },
-              },
-            } );
-          
-            main.sync( thumbnails );
-            main.mount();
-            thumbnails.mount();
-          } );"
-        ></script>
+
+
         <RouterHead />
         <ServiceWorkerRegister />
       </head>

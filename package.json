@@ -50,7 +50,7 @@
     "vite-tsconfig-paths": "^4.2.1"
   },
   "dependencies": {
-    "@splidejs/react-splide": "^0.7.12",
+    "@types/swiper": "^6.0.0",
     "swiper": "^11.0.5"
   }
 }
