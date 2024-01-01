@@ -8,13 +8,11 @@ import { RouterHead } from "./components/router-head/router-head";
 
 import "./global.css";
 
-
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
-
-// @ts-ignore:next-line
-import Swiper  from 'swiper/bundle' ;
-// import { Navigation, Pagination } from 'swiper/modules';
-
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 export default component$(() => {
   /**
@@ -26,10 +24,11 @@ export default component$(() => {
   useOnWindow('load',$((event) => {
     const swiper = new Swiper(".swiper-products", {
       // Optional parameters
-      loop: false,
+      loop: true,
       speed:500,
       cssMode:true,
       slidesPerView:4,
+      modules: [Navigation, Pagination],
       pagination: {
         el: ".swiper-pagination",
       },
@@ -49,10 +48,11 @@ export default component$(() => {
 
     const swiperMobile = new Swiper(".swiperMobile", {
       // Optional parameters
-      loop: false,
+      loop: true,
       speed:500,
       cssMode:true,
       slidesPerView:1,
+      modules: [Navigation, Pagination],
       //  pagination="false"  
     
       // If we need pagination
@@ -78,11 +78,6 @@ export default component$(() => {
       <head>
         <meta charSet="utf-8" />
         <link rel="manifest" href="/manifest.json" />
-
-        <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
 
 
 
