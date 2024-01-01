@@ -10,9 +10,7 @@ import "./global.css";
 
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+
 
 export default component$(() => {
   /**
@@ -21,7 +19,7 @@ export default component$(() => {
    *
    * Don't remove the `<head>` and `<body>` elements.
    */
-
+  useOnWindow('load',$((event) => {
     
     const swiper = new Swiper(".swiper-products", {
       // Optional parameters
@@ -72,7 +70,7 @@ export default component$(() => {
         el: ".swiper-scrollbar",
       },
     });
-
+  }))
 
   return (
     <QwikCityProvider>
