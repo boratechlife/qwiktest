@@ -1,5 +1,5 @@
 {
-  "manifestHash": "b2v6j4",
+  "manifestHash": "kj0tm3",
   "symbols": {
     "s_02wMImzEAbk": {
       "origin": "../node_modules/@builder.io/qwik-city/index.qwik.mjs",
@@ -67,8 +67,8 @@
       "captures": false,
       "parent": null,
       "loc": [
-        386,
-        2127
+        476,
+        2217
       ]
     },
     "s_5Go3iiHXUB4": {
@@ -739,8 +739,8 @@
       "captures": false,
       "parent": "s_3sccYCDd1Z0",
       "loc": [
-        643,
-        1801
+        733,
+        1891
       ]
     },
     "s_D04jAYuCnhM": {
@@ -1256,19 +1256,6 @@
       ],
       "origins": [
         "src/media/Bitmap.png?jsx"
-      ]
-    },
-    "q-03e52384.js": {
-      "size": 207,
-      "imports": [
-        "q-cd53cf30.js"
-      ],
-      "dynamicImports": [
-        "q-62cb2228.js"
-      ],
-      "origins": [
-        "src/global.css",
-        "src/root.tsx"
       ]
     },
     "q-07ee052a.js": {
@@ -2047,6 +2034,22 @@
         "s_AnxHh3KwHLM"
       ]
     },
+    "q-c4b402dd.js": {
+      "size": 207,
+      "imports": [
+        "q-cd53cf30.js"
+      ],
+      "dynamicImports": [
+        "q-62cb2228.js"
+      ],
+      "origins": [
+        "node_modules/swiper/modules/navigation.css",
+        "node_modules/swiper/modules/pagination.css",
+        "node_modules/swiper/swiper.css",
+        "src/global.css",
+        "src/root.tsx"
+      ]
+    },
     "q-cd53cf30.js": {
       "size": 50689,
       "origins": [
@@ -2182,7 +2185,7 @@
       "location": "head",
       "attributes": {
         "rel": "stylesheet",
-        "href": "/build/q-6496f778.css"
+        "href": "/build/q-a66907ff.css"
       }
     }
   ],
