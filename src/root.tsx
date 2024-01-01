@@ -21,7 +21,7 @@ export default component$(() => {
    *
    * Don't remove the `<head>` and `<body>` elements.
    */
-  useOnWindow('load',$((event) => {
+
     
     const swiper = new Swiper(".swiper-products", {
       // Optional parameters
@@ -72,7 +72,7 @@ export default component$(() => {
         el: ".swiper-scrollbar",
       },
     });
-  }))
+
 
   return (
     <QwikCityProvider>
@@ -82,12 +82,7 @@ export default component$(() => {
 
 
 
-        <script src="
-https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.js
-"></script>
-<link href="
-https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.css
-" rel="stylesheet" />
+
 
         <RouterHead />
         <ServiceWorkerRegister />
