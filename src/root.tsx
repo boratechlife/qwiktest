@@ -8,7 +8,7 @@ import { RouterHead } from "./components/router-head/router-head";
 
 import "./global.css";
 
-import 'swiper/css';
+
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
