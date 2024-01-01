@@ -26,7 +26,7 @@ export default component$(() => {
   useOnWindow('load',$((event) => {
     const swiper = new Swiper(".swiper-products", {
       // Optional parameters
-      loop: true,
+      loop: false,
       speed:500,
       cssMode:true,
       slidesPerView:4,
@@ -49,7 +49,7 @@ export default component$(() => {
 
     const swiperMobile = new Swiper(".swiperMobile", {
       // Optional parameters
-      loop: true,
+      loop: false,
       speed:500,
       cssMode:true,
       slidesPerView:1,
