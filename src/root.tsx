@@ -9,11 +9,11 @@ import { RouterHead } from "./components/router-head/router-head";
 import "./global.css";
 
 
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import 'swiper/css';
 
-import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+// @ts-ignore:next-line
+import Swiper  from 'swiper/bundle' ;
+// import { Navigation, Pagination } from 'swiper/modules';
 
 
 export default component$(() => {
@@ -30,7 +30,6 @@ export default component$(() => {
       speed:500,
       cssMode:true,
       slidesPerView:4,
-      modules: [Navigation, Pagination],
       pagination: {
         el: ".swiper-pagination",
       },
@@ -54,7 +53,6 @@ export default component$(() => {
       speed:500,
       cssMode:true,
       slidesPerView:1,
-      modules: [Navigation, Pagination],
       //  pagination="false"  
     
       // If we need pagination
