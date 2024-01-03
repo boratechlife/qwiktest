@@ -99,7 +99,7 @@ window.addEventListener('load', ()=> {
   })
 
   next.addEventListener('click',()=> {
-    alert(clientW)
+
     // Scroll to the right smoothly
     container.scrollBy({ left: clientW, behavior: 'smooth' });
     setTimeout(updateButtonState, 300); // Adjust time as needed
