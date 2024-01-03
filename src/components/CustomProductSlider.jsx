@@ -3,11 +3,17 @@ import { component$, useStore, $, useOnWindow } from "@builder.io/qwik";
 import { BasketIcon, NextIcon, PrevIcon, StarIcon } from "./starter/icons/qwik";
 
 export default component$(({ bestSellerProducts }) => {
+
+  const images = $(()=>{
+    return bestSellerProducts.map(item)
+  })
   const formatImageUrl = $((item) => {
+
     if (item.image.formats[0] === undefined) {
       return null;
     }
-    return `https://s.fysia.se/${item.image.imageName}-${item.image.number}-${item.image.sizes[2]}.${item.image.formats[0]}`;
+    console.log("Image",`https://s.fysia.se/${item.image.imageName}-${item.image.number}-${item.image.sizes[2]}.${item.image.formats[2]}`)
+    return `https://s.fysia.se/${item.image.imageName}-${item.image.number}-${item.image.sizes[2]}.${item.image.formats[2]}`;
   });
 
   return (
@@ -25,12 +31,12 @@ export default component$(({ bestSellerProducts }) => {
         >
           <PrevIcon />
         </div>
-        <div class="custom-button-next  transform flex items-center justify-center -translate-y-1/2  w-[60.968px] h-[90px] rounded  bg-[#1D6EC1] text-white right-0  absolute  z-[99999]  top-1/2">
+        <div id="seller-next" class="custom-button-next  transform flex items-center justify-center -translate-y-1/2  w-[60.968px] h-[90px] rounded  bg-[#1D6EC1] text-white -right-16  absolute  z-[99999]  top-1/2">
           <NextIcon />
         </div>
 
         <div class="custom custom-products w-full mx-auto  py-10 ">
-          <div class="flex custom-slider gap-8  flex-nowrap overflow-hidden">
+          <div id="custom-slider" class="flex custom-slider gap-8  flex-nowrap overflow-hidden">
             {bestSellerProducts &&
               bestSellerProducts.map((item, index) => {
                 return (
@@ -39,8 +45,9 @@ export default component$(({ bestSellerProducts }) => {
                       class="w-full lg:w-[250px] group"
                       key={item.identifier}
                     >
+                      <img src={formatImageUrl(item)} alt="" />
                       <div class="w-full h-[163px] flex-shrink-0 group-hover:lg:h-[243px] lg:h-[300px] lg:w-full   relative flex">
-                        {formatImageUrl(item) && (
+                        {(
                           <img
                             src={formatImageUrl(item)}
                             alt={item.title}
@@ -141,7 +148,55 @@ export default component$(({ bestSellerProducts }) => {
 
           {/* <div class="swiper-pagination"></div> */}
 
-          {/* <div class="swiper-scrollbar"></div> */}
+<script dangerouslySetInnerHTML={`
+window.addEventListener('load', ()=> {
+  const prev = document.querySelector('#seller-prev')
+  const next = document.querySelector('#seller-next')
+  const container = document.querySelector('#custom-slider')
+
+  clientW = document.querySelector('.custom-item').clientWidth
+
+
+  // Function to update the state of buttons
+  const updateButtonState = () => {
+    if (container.scrollLeft <= 0) {
+      prev.classList.add('bg-black');
+      prev.classList.add('opacity-10');
+    } else {
+      prev.classList.remove('bg-black');
+      prev.classList.remove('opacity-10');
+
+    }
+
+    if (container.scrollLeft + container.offsetWidth >= container.scrollWidth-10) {
+     
+      next.classList.add('bg-black');
+      next.classList.add('opacity-10');
+    } else {
+ 
+      next.classList.remove('bg-black');
+      next.classList.remove('opacity-10');
+    }
+  };
+
+  // Initial check
+  updateButtonState();
+
+  prev.addEventListener('click',()=> {
+    // Scroll to the left smoothly
+    container.scrollBy({ left: -clientW, behavior: 'smooth' });
+    setTimeout(updateButtonState, 300); // Adjust time as needed
+  })
+
+  next.addEventListener('click',()=> {
+    // Scroll to the right smoothly
+    container.scrollBy({ left: clientW, behavior: 'smooth' });
+    setTimeout(updateButtonState, 300); // Adjust time as needed
+  })
+})
+`}>
+
+</script>
         </div>
       </div>
     </section>
