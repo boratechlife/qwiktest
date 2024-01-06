@@ -1,6 +1,12 @@
 // ProductItem.tsx
 import { component$, $, useSignal } from "@builder.io/qwik";
 import { QuantitySelector } from "./QuantitySelector ";
+import {
+  CheckGray,
+  CheckIconWhite,
+  FilledArrowDown,
+  LongPromoLabel,
+} from "./starter/icons/qwik";
 
 interface ItemProps {
   name: string;
@@ -36,18 +42,7 @@ export const ProductItem = component$<ItemProps>(({ name }) => {
                 }
               }}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="19"
-                height="14"
-                viewBox="0 0 19 14"
-                fill="none"
-              >
-                <path
-                  d="M6.45324 13.725L0.278237 7.62349C-0.0927457 7.25692 -0.0927457 6.66257 0.278237 6.29596L1.62171 4.96843C1.99269 4.60182 2.59424 4.60182 2.96522 4.96843L7.125 9.07869L16.0348 0.274927C16.4058 -0.0916425 17.0073 -0.0916425 17.3783 0.274927L18.7218 1.60246C19.0927 1.96903 19.0927 2.56338 18.7218 2.92998L7.79675 13.7251C7.42573 14.0916 6.82423 14.0916 6.45324 13.725Z"
-                  fill="white"
-                />
-              </svg>
+              <CheckIconWhite />
             </div>
           )}
 
@@ -65,18 +60,7 @@ export const ProductItem = component$<ItemProps>(({ name }) => {
                 }
               }}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="19"
-                height="14"
-                viewBox="0 0 19 14"
-                fill="none"
-              >
-                <path
-                  d="M6.45324 13.725L0.278237 7.62349C-0.0927457 7.25692 -0.0927457 6.66257 0.278237 6.29596L1.62171 4.96843C1.99269 4.60182 2.59424 4.60182 2.96522 4.96843L7.125 9.07869L16.0348 0.274927C16.4058 -0.0916425 17.0073 -0.0916425 17.3783 0.274927L18.7218 1.60246C19.0927 1.96903 19.0927 2.56338 18.7218 2.92998L7.79675 13.7251C7.42573 14.0916 6.82423 14.0916 6.45324 13.725Z"
-                  fill="#F0F2F5"
-                />
-              </svg>
+              <CheckGray />
             </label>
           )}
         </div>
@@ -87,21 +71,7 @@ export const ProductItem = component$<ItemProps>(({ name }) => {
             <div class="h-[25px] w-[66px]"></div>
             <span class="z-50 absolute top-1/4 w-full "> 40% OFF</span>
 
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="absolute top-0 -left-2 h-full"
-              width="66"
-              height="25"
-              viewBox="0 0 66 25"
-              fill="none"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M11.7915 0.864591C12.3529 0.310608 13.1099 0 13.8987 0H63C64.6569 0 66 1.34315 66 3V22C66 23.6569 64.6569 25 63 25H13.8987C13.1099 25 12.3529 24.6894 11.7915 24.1354L1.44271 13.9236C0.649052 13.1405 0.649051 11.8595 1.44271 11.0764L11.7915 0.864591Z"
-                fill="#CA232C"
-              />
-            </svg>
+            <LongPromoLabel />
           </span>
         </div>
       </div>
@@ -121,20 +91,7 @@ export const ProductItem = component$<ItemProps>(({ name }) => {
             onClick$={() => (showDropdown.value = !showDropdown.value)}
             class="flex-1 flex justify-end"
           >
-            <svg
-              width="10"
-              height="6"
-              viewBox="0 0 10 6"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M5 6L10 0H0L5 6Z"
-                fill="black"
-              />
-            </svg>
+            <FilledArrowDown />
           </span>
           {showDropdown.value && (
             <QuantitySelector options={options} onSelect={onSelect} />
